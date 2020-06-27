@@ -1,0 +1,45 @@
+.profile-photo {
+    height: 100%;
+    width: auto;   
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.whiteTitles {
+    text-decoration: underline;
+    text-underline-position: under;
+    padding-bottom: 20px;
+    
+    font-weight: 700;
+    color: white;
+}
+
+p {
+    font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;   
+}
+
+.primary-color {
+    background-color: #323330;
+}
+
+.second-color {
+    background-color:#F0DB4F;
+}
+
+.icons {
+    padding-left: 20px;
+}
+
+.iconColor {
+    color: #ffffff;
+}
+
+.jumbotron {   
+padding-bottom:10px;
+
+ }
+
+ 
+ html {
+    scroll-behavior: smooth;
+}
