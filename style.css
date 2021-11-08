@@ -14,16 +14,20 @@
     color: white;
 }
 
+.display-4 {
+    font-size: 3.5rem;
+    font-weight: 350;
+    line-height: 1.2;
+    text-align: center;
+    padding-bottom: 3%;
+}
+
 p {
     font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;   
 }
 
-.primary-color {
-    background-color: #323330;
-}
-
-.second-color {
-    background-color:#F0DB4F;
+.header-footer-color {
+    background-color:#2f3542;
 }
 
 .icons {
@@ -34,10 +38,20 @@ p {
     color: #ffffff;
 }
 
-.jumbotron {   
+.jumbotron_ {   
 padding-bottom:10px;
+background-image: url(https://i.ibb.co/DkZgzSR/Design-sem-nome-1.png);
+background-size: cover;
+background-position: center 20%;
 
- }
+}
+
+.jumbotron_footer {   
+    padding-bottom:10px;
+    background-image: url(https://i.ibb.co/KzZLpR9/footer.png);
+    background-size: cover;
+    background-position: center 50%;
+}
 
  
  html {
