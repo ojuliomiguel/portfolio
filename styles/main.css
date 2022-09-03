@@ -71,20 +71,23 @@ li{
 }
 
 #socials--list{
-  display: flex;  
-  justify-content: space-start;
+  display: flex;
+  justify-content: space-between;
   column-gap: 1em;
   flex-wrap: wrap;
 }
 
 #socials--list a{
-  font-size: 0.9em;  
+  font-weight: 300;
   color: var(--secondaryTextColor);
+  font-size: 0.9em;
   transition: 0.3s;
 }
 
 #socials--list a:hover{
+  font-weight: 100;
   color: var(--mainLinkColor);
+  font-size: 0.9em;
 }
 
 #qualifications--list{
@@ -102,4 +105,16 @@ li{
   border: 1px solid var(--mainBorderColor);  
   padding: 0.4em 1em;
   border-radius: 5px;
+}
+
+.card--work-history{
+  border-left: 1px solid var(--mainBorderColor);
+  margin-top: 3em;
+  margin-bottom: 3em;
+  padding-left: 2em;
+}
+
+.line-break{
+  background-color: var(--mainBorderColor);
+  height: 1px;
 }
