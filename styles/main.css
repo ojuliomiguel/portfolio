@@ -118,3 +118,31 @@ li{
   background-color: var(--mainBorderColor);
   height: 1px;
 }
+
+@media(max-width:600px) {
+
+  .section--page {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  #wrapper--hero {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+
+  #profile-pic {
+    width: 200px;
+    height: 200px;
+  }
+
+  #wrapper--hero {
+    flex-direction: column;
+  }
+
+  .card--work-history {
+    border-left: none;
+    padding-left: 0;
+  }
+}
