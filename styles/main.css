@@ -181,4 +181,9 @@ li{
     border-left: none;
     padding-left: 0;
   }
+
+  #project--img{
+    width: 100%;
+    height: auto;
+  }
 }
