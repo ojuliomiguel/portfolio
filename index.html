@@ -7,6 +7,7 @@
   <title>Júlio Miguel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" media="screen" href='./styles/main.css'>
+  <link rel="icon" href="assets/icon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -19,7 +20,7 @@
       <div>
         <h1 id="user-name">Júlio Miguel</h1>
         <p id="bio">
-          Desenvolvedor de Software, atuando como Backend Sr na <a href="https://www.yduqs.com.br/" target="_blank">YDUQS</a>
+          Engenheiro de Software, atuando como Backend Sr na <a href="https://www.yduqs.com.br/" target="_blank">YDUQS</a>.
           <br>
           Café para energizar ☕️, livros para sonhar e códigos para transformar.
         </p>
@@ -43,7 +44,7 @@
       <h2> Habilidades & Qualificações </h2>
       <ul id="qualifications--list">
         <li>✅ Graduado em Ciência da Computação pela Universidade Federal de Alagoas </li>
-        <li>✅ 3 anos de experiência profissional em desenvolvimento de software</li>
+        <li>✅ 4 anos de experiência profissional em desenvolvimento de software</li>
         <li>✅ Vasto conhecimento na aŕea de backend</li>
       </ul>
     </section>
@@ -53,23 +54,23 @@
 
       <div id="wrapper--techstack__items">
         <div class="card--techstack">
-          <span>Nodejs, JavaScript, TypesScript, Python, Java, Delphi, CSharp</span>
+          <span>Nodejs, JavaScript, TypesScript, React, Python, Java, Delphi, C#</span>
         </div>
 
         <div class="card--techstack">
-          <span>ExpressJS, AdonisJS, NestJS, KoaJS</span>
+          <span>ExpressJS, NestJS, Spring Boot, ASP.NET Core</span>
         </div>
 
         <div class="card--techstack">
-          <span>Postgres, MySQL, MongoDB</span>
+          <span>Postgres, MySQL, MongoDB, Oracle, DynamoDB</span>
         </div>
 
         <div class="card--techstack">
-          <span>Kafka, RabbitMQ</span>
+          <span>Kafka, RabbitMQ, SQS</span>
         </div>
         
         <div class="card--techstack">
-          <span>Docker</span>
+          <span>Docker, AWS, Kubernetes</span>
         </div>
 
       </div>
@@ -79,7 +80,7 @@
 
       <div class="line--break"></div>
       <div class="card--work-history">
-        <strong>💻 BACK-END DEVELOP | AME DIGITAL/BITCAPITAL</strong>
+        <strong>💻 BACKEND DEVELOP | AME DIGITAL/BITCAPITAL</strong>
         <p>MAIO 2022 - FEV 2023</p>
         <p>
           Trabalhei com desenvolvimento backend focados no setor financeiro, especificamente em Contabilidade e Ledger [Livro-razão].
@@ -96,7 +97,7 @@
       <div class="line-break"></div>
 
       <div class="card--work-history">
-        <strong>💻 ENGENHEIRO DE SOFTWARE BACK-END | GRUPO FCAMARA</strong>
+        <strong>💻 ENGENHEIRO DE SOFTWARE BACKEND | GRUPO FCAMARA</strong>
         <p>FEV 2022 - MAIO 2022</p>
         <p>
           Desenvolvimento e suporte a um software de gestão de ideias. 
@@ -112,7 +113,7 @@
 
 
       <div class="card--work-history">
-        <strong>💻 ENGENHEIRO DE SOFTWARE BACK-END | AWS-CODE/AYT1.DEV</strong>
+        <strong>💻 ENGENHEIRO DE SOFTWARE BACKEND | AWS-CODE/AYT1.DEV</strong>
         <p>JUL 2021 - FEV 2022</p>
         <p>
           Desenvolvimento e suporte a um software de gestão de ideias. 
@@ -166,25 +167,44 @@
       <h2>Projetos</h2>
     
       <div class="card--project">
-        <a href="./projects/chatbot.html"><span>🏆 </span>ChatBot para Whatsapp que permite usuários validarem localização digitando o CEP</a>
+        <a href="./projects/chatbot.html"><span>🤖 </span>Whatsapp Bot validador de CEP</a>
       </div>
 
       <div class="card--project">
-        <a href="./projects/mylivros.html"><span>🏆 </span>MyLivros App</a>
+        <a href="./projects/nest.html"><span>⚙️ </span>Food Facts - Uma CRON Job API</a>
       </div>
 
       <div class="card--project">
-        <a href="./projects/todo.html"><span>🏆 </span>Vanilla Todo App</a>
+        <a href="./projects/mylivros.html"><span>📚 </span>MyLivros App</a>
       </div>
 
       <div class="card--project">
-        <a href="./projects/nest.html"><span>🏆 </span>Gerenciador de Tarefas Api</a>
+        <a href="./projects/todo.html"><span>🗒 </span>Vanilla Todo App</a>
       </div>
 
     </section>
 
   </div>
 
+  
+  <button id="btnTopo" onclick="rolarParaTopo()" class="go--to-top-bnt">&#8593; Top</button>
+
+  <script>
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("btnTopo").style.display = "block";
+      } else {
+        document.getElementById("btnTopo").style.display = "none";
+      }
+    }
+    
+    function rolarParaTopo() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+    </script>
+    
 </body>
 
 </html>
