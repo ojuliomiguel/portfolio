@@ -108,6 +108,25 @@ a {
 
 #qualifications--list {
   list-style: none;
+  padding-left: 0;
+}
+
+#qualifications--list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+#qualifications--list li i {
+  margin-right: 10px;
+  color: var(--mainLinkColor);
+  min-width: 20px;
+  text-align: center;
+}
+
+h2 i {
+  margin-right: 10px;
+  color: var(--mainLinkColor);
 }
 
 #wrapper--techstack__items {
@@ -121,6 +140,17 @@ a {
   border: 1px solid var(--mainBorderColor);
   padding: 0.4em 1em;
   border-radius: 5px;
+}
+
+.card--techstack span {
+  display: flex;
+  align-items: center;
+}
+
+.card--techstack i {
+  margin-right: 8px;
+  color: var(--mainLinkColor);
+  font-size: 1.1em;
 }
 
 .card--work-history {
@@ -190,6 +220,11 @@ a {
   transition: color 0.3s ease;
 }
 
+.card--work-history strong i {
+  margin-right: 8px;
+  color: var(--mainLinkColor);
+}
+
 .card--work-history-header:hover strong {
   color: var(--mainLinkColor);
 }
@@ -199,6 +234,12 @@ a {
   font-weight: 500;
   color: var(--secondaryTextColor);
   margin-bottom: 1em;
+}
+
+.card--work-history .period i {
+  margin-right: 5px;
+  font-size: 0.9em;
+  opacity: 0.8;
 }
 
 .card--work-history ul {
@@ -221,6 +262,21 @@ a {
   opacity: 0.7;
 }
 
+.card--work-history-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.card--work-history-content ul li {
+  margin-bottom: 8px;
+}
+
+.card--work-history-content ul li i {
+  margin-right: 8px;
+  font-size: 0.9em;
+  color: var(--mainLinkColor);
+}
+
 .card--project {
   padding-top: 1em;
   padding-bottom: 1em;
@@ -233,6 +289,11 @@ a {
 }
 
 .card--project a:hover {
+  color: var(--mainLinkColor);
+}
+
+.card--project a i {
+  margin-right: 8px;
   color: var(--mainLinkColor);
 }
 
