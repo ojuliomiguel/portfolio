@@ -124,15 +124,101 @@ a {
 }
 
 .card--work-history {
-  border-left: 1px solid var(--mainBorderColor);
-  margin-top: 3em;
-  margin-bottom: 3em;
+  border-left: 2px solid var(--mainBorderColor);
+  margin-top: 2em;
+  margin-bottom: 2em;
   padding-left: 2em;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.line-break {
-  background-color: var(--mainBorderColor);
-  height: 1px;
+.card--work-history-header {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0;
+  transition: all 0.3s ease;
+}
+
+.card--work-history-header:hover {
+  color: var(--mainLinkColor);
+}
+
+.card--work-history-header:hover .toggle-icon {
+  color: var(--mainLinkColor);
+  opacity: 1;
+}
+
+.card--work-history-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  opacity: 0;
+  margin-top: -10px;
+}
+
+.card--work-history.active {
+  border-left-color: var(--mainLinkColor);
+}
+
+.card--work-history.active .card--work-history-content {
+  max-height: 1000px;
+  opacity: 1;
+  margin-top: 0;
+  transition: max-height 0.5s ease-in, opacity 0.3s ease-in, margin-top 0.3s ease-in;
+}
+
+.toggle-icon {
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+  color: var(--secondaryTextColor);
+  opacity: 0.7;
+  margin-left: 1em;
+}
+
+.card--work-history.active .toggle-icon {
+  transform: rotate(180deg);
+  color: var(--mainLinkColor);
+  opacity: 1;
+}
+
+.card--work-history strong {
+  font-size: 1.1em;
+  color: var(--mainTextColor);
+  margin-bottom: 0.5em;
+  transition: color 0.3s ease;
+}
+
+.card--work-history-header:hover strong {
+  color: var(--mainLinkColor);
+}
+
+.card--work-history .period {
+  font-size: 0.9em;
+  font-weight: 500;
+  color: var(--secondaryTextColor);
+  margin-bottom: 1em;
+}
+
+.card--work-history ul {
+  margin-top: 1em;
+  list-style: none;
+  padding-left: 0;
+}
+
+.card--work-history ul li {
+  margin-bottom: 0.5em;
+  position: relative;
+  padding-left: 1.5em;
+}
+
+.card--work-history ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--mainLinkColor);
+  opacity: 0.7;
 }
 
 .card--project {

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ojuliomiguel.github.io/portfolio/sitemap.xml
