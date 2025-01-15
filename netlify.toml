@@ -1,5 +1,5 @@
-[[plugins]]
-package = "netlify-plugin-inline-source"
+[build]
+  command = "sed -i 's/___NETLIFY_GA_ID___/'\"$NETLIFY_GA_ID\"'/g' index.html"
 
 [build.processing]
   skip_processing = false
