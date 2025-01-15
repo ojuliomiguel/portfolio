@@ -1,3 +1,9 @@
+[[plugins]]
+package = "netlify-plugin-inline-source"
+
+[build.environment]
+  NETLIFY_GA_ID = "${NETLIFY_GA_ID}"
+
 [build.processing]
   skip_processing = false
 
