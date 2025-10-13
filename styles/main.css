@@ -109,19 +109,55 @@ a {
 #qualifications--list {
   list-style: none;
   padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1em;
 }
 
 #qualifications--list li {
-  margin-bottom: 10px;
+  margin-bottom: 0;
   display: flex;
   align-items: center;
+  padding: 1.2em;
+  border: 1px solid var(--mainBorderColor);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+}
+
+#qualifications--list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-color: var(--mainLinkColor);
 }
 
 #qualifications--list li i {
-  margin-right: 10px;
-  color: var(--mainLinkColor);
-  min-width: 20px;
+  margin-right: 15px;
+  font-size: 1.5em;
+  min-width: 30px;
   text-align: center;
+  transition: transform 0.3s ease;
+}
+
+#qualifications--list li:hover i {
+  transform: scale(1.1);
+}
+
+/* Cores dos ícones de qualificações */
+#qualifications--list li:nth-child(1) i {
+  color: #3498db;
+}
+
+#qualifications--list li:nth-child(2) i {
+  color: #e74c3c;
+}
+
+#qualifications--list li:nth-child(3) i {
+  color: #f39c12;
+}
+
+#qualifications--list li:nth-child(4) i {
+  color: #9b59b6;
 }
 
 h2 i {
@@ -133,23 +169,68 @@ h2 i {
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
-  font-size: 0.9;
+  font-size: 0.9em;
 }
 
 .card--techstack {
   border: 1px solid var(--mainBorderColor);
-  padding: 0.4em 1em;
-  border-radius: 5px;
+  padding: 1em 1.3em;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+  flex: 1 1 calc(50% - 0.5em);
+  min-width: 280px;
+}
+
+.card--techstack:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-color: var(--mainLinkColor);
 }
 
 .card--techstack span {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  gap: 10px;
 }
 
 .card--techstack i {
-  margin-right: 8px;
-  color: var(--mainLinkColor);
+  margin-top: 3px;
+  font-size: 1.3em;
+  min-width: 25px;
+  transition: transform 0.3s ease;
+}
+
+.card--techstack:hover i {
+  transform: scale(1.1);
+}
+
+/* Cores temáticas para cada categoria de tech skill */
+.tech-architecture i {
+  color: #3498db;
+}
+
+.tech-languages i {
+  color: #e74c3c;
+}
+
+.tech-databases i {
+  color: #27ae60;
+}
+
+.tech-messaging i {
+  color: #f39c12;
+}
+
+.tech-devops i {
+  color: #9b59b6;
+}
+
+@media(max-width: 768px) {
+  .card--techstack {
+    flex: 1 1 100%;
+  }
+}
   font-size: 1.1em;
 }
 
@@ -322,6 +403,293 @@ h2 i {
   color: var(--mainLinkColor);
 }
 
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-top: 1.5em;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+#wrapper--projects {
+  display: flex;
+  gap: 1.5em;
+  width: 100%;
+}
+
+.card--project-enhanced {
+  min-width: calc(50% - 0.75em);
+  flex: 0 0 calc(50% - 0.75em);
+  border: 1px solid var(--mainBorderColor);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  min-height: 160px;
+}
+
+.card--project-enhanced:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  border-color: var(--mainLinkColor);
+}
+
+.card--project-enhanced a {
+  display: flex;
+  flex-direction: row;
+  padding: 1.5em;
+  text-decoration: none;
+  color: var(--mainTextColor);
+  gap: 1.2em;
+  align-items: center;
+  width: 100%;
+  min-height: 160px;
+  box-sizing: border-box;
+}
+
+.card--project-enhanced .project-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card--project-enhanced .project-icon i {
+  font-size: 1.8em;
+  transition: transform 0.3s ease;
+}
+
+.card--project-enhanced:hover .project-icon {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.card--project-enhanced:hover .project-icon i {
+  transform: rotate(5deg);
+}
+
+.card--project-enhanced .project-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  min-width: 0;
+  overflow: visible;
+}
+
+.card--project-enhanced .project-content h3 {
+  margin: 0;
+  font-size: 1.05em;
+  font-weight: 600;
+  color: var(--mainTextColor);
+  transition: color 0.3s ease;
+  line-height: 1.3;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+}
+
+.card--project-enhanced:hover .project-content h3 {
+  color: var(--mainLinkColor);
+}
+
+.card--project-enhanced .project-content p {
+  margin: 0;
+  font-size: 0.85em;
+  color: var(--secondaryTextColor);
+  line-height: 1.4;
+  overflow: visible;
+  white-space: normal;
+}
+
+.card--project-enhanced .project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin-top: 0.2em;
+}
+
+.card--project-enhanced .project-tags .tag {
+  font-size: 0.7em;
+  padding: 0.3em 0.7em;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--mainBorderColor);
+  color: var(--secondaryTextColor);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.card--project-enhanced:hover .project-tags .tag {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--mainLinkColor);
+}
+
+/* Carousel Navigation Buttons */
+.carousel-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--mainBorderColor);
+  color: var(--mainTextColor);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  font-size: 1.2em;
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--mainLinkColor);
+  color: var(--mainLinkColor);
+  transform: scale(1.1);
+}
+
+.carousel-btn:active {
+  transform: scale(0.95);
+}
+
+.carousel-btn i {
+  color: inherit;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.8em;
+  margin-top: 1.5em;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--mainBorderColor);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.2);
+}
+
+.indicator.active {
+  background: var(--mainLinkColor);
+  border-color: var(--mainLinkColor);
+  width: 30px;
+  border-radius: 5px;
+}
+
+/* Project-specific icon colors */
+.project-myhouse .project-icon i {
+  color: #3498db;
+}
+
+.project-chatbot .project-icon i {
+  color: #2ecc71;
+}
+
+.project-nest .project-icon i {
+  color: #e74c3c;
+}
+
+.project-mylivros .project-icon i {
+  color: #f39c12;
+}
+
+.project-todo .project-icon i {
+  color: #9b59b6;
+}
+
+@media(max-width: 768px) {
+  .carousel-container {
+    gap: 0.5em;
+  }
+  
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9em;
+  }
+  
+  .card--project-enhanced {
+    min-width: 100%;
+    flex: 0 0 100%;
+    min-height: 150px;
+  }
+  
+  .card--project-enhanced a {
+    padding: 1.2em;
+    gap: 1em;
+    min-height: 150px;
+  }
+  
+  .card--project-enhanced .project-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .card--project-enhanced .project-icon i {
+    font-size: 1.5em;
+  }
+  
+  .card--project-enhanced .project-content h3 {
+    font-size: 1em;
+  }
+  
+  .card--project-enhanced .project-content p {
+    font-size: 0.8em;
+  }
+  
+  .card--project-enhanced .project-tags .tag {
+    font-size: 0.65em;
+  }
+  
+  .carousel-indicators {
+    gap: 0.5em;
+  }
+}
+
+@media(min-width: 769px) and (max-width: 1024px) {
+  .card--project-enhanced {
+    min-height: 155px;
+  }
+  
+  .card--project-enhanced a {
+    min-height: 155px;
+  }
+  
+  .card--project-enhanced .project-content h3 {
+    font-size: 1em;
+  }
+  
+  .card--project-enhanced .project-content p {
+    font-size: 0.8em;
+  }
+}
+
 #project--img {
   display: block;
   max-width: 100%;
@@ -361,6 +729,10 @@ h2 i {
     width: 100%;
     height: auto;
   }
+
+  #qualifications--list {
+    grid-template-columns: 1fr;
+  }
 }
 
 .go--to-top-bnt {
@@ -381,5 +753,4 @@ h2 i {
 
 #btnTopo:hover {
   background-color: #333;
-  /* Cor de fundo ao passar o mouse */
 }
