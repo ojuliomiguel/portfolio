@@ -225,6 +225,31 @@ h2 i {
   color: var(--mainLinkColor);
 }
 
+/* Company icon colors */
+.company-icon-bitlob {
+  color: #2E86AB !important;
+}
+
+.company-icon-digix {
+  color: #27AE60 !important;
+}
+
+.company-icon-yduqs {
+  color: #8E44AD !important;
+}
+
+.company-icon-ame {
+  color: #E67E22 !important;
+}
+
+.company-icon-plussoft {
+  color: #95A5A6 !important;
+}
+
+.company-icon-other {
+  color: #34495E !important;
+}
+
 .card--work-history-header:hover strong {
   color: var(--mainLinkColor);
 }
