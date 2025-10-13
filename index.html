@@ -200,6 +200,29 @@
       <div class="card--work-history">
         <div class="card--work-history-header" onclick="toggleExperience(this)">
           <div>
+            <strong>DESENVOLVEDOR DE SOFTWARE | PLUSSOFT</strong>
+            <p class="period"><i class="far fa-calendar-alt"></i> Janeiro 2020 - Julho 2021 • 1 ano e 7 meses</p>
+          </div>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="card--work-history-content">
+          <p>
+            Desenvolvimento de soluções de integração para sistemas legados em Delphi,
+            modernizando a infraestrutura e implementando novas funcionalidades.
+          </p>
+          <ul>
+            <li><i class="fas fa-check"></i> Desenvolvimento de APIs REST para integração de sistemas</li>
+            <li><i class="fas fa-check"></i> Criação de chatbots para Whatsapp e Telegram</li>
+            <li><i class="fas fa-check"></i> Desenvolvimento de aplicações desktop com integração cloud</li>
+            <li><i class="fas fa-check"></i> Manutenção e evolução de sistemas legados</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="card--work-history">
+        <div class="card--work-history-header" onclick="toggleExperience(this)">
+          <div>
             <strong>OUTRAS ATUAÇÕES PROFISSIONAIS</strong>
             <p class="period"><i class="far fa-calendar-alt"></i> Agosto 2020 - Maio 2022</p>
           </div>
@@ -238,29 +261,6 @@
         </div>
       </div>
 
-      <div class="card--work-history">
-        <div class="card--work-history-header" onclick="toggleExperience(this)">
-          <div>
-            <strong>DESENVOLVEDOR DE SOFTWARE | PLUSSOFT</strong>
-            <p class="period"><i class="far fa-calendar-alt"></i> Janeiro 2020 - Julho 2021 • 1 ano e 7 meses</p>
-          </div>
-          <span class="toggle-icon">▼</span>
-        </div>
-        <div class="card--work-history-content">
-          <p>
-            Desenvolvimento de soluções de integração para sistemas legados em Delphi,
-            modernizando a infraestrutura e implementando novas funcionalidades.
-          </p>
-          <ul>
-            <li><i class="fas fa-check"></i> Desenvolvimento de APIs REST para integração de sistemas</li>
-            <li><i class="fas fa-check"></i> Criação de chatbots para Whatsapp e Telegram</li>
-            <li><i class="fas fa-check"></i> Desenvolvimento de aplicações desktop com integração cloud</li>
-            <li><i class="fas fa-check"></i> Manutenção e evolução de sistemas legados</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
     <script>
       function toggleExperience(header) {
         const card = header.closest('.card--work-history');
@@ -270,6 +270,10 @@
 
     <section class="section--page">
       <h2>Projetos</h2>
+
+      <div class="card--project">
+        <a href="./projects/myhouse.html"><i class="fas fa-home"></i> My House - Arquitetura Hexagonal com Spring Boot</a>
+      </div>
 
       <div class="card--project">
         <a href="./projects/chatbot.html"><i class="fas fa-robot"></i> Whatsapp Bot validador de CEP</a>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Júlio Miguel </title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+  <div id="container--main">
+
+    <a href="../index.html">&#x2190; Voltar</a>
+
+    <h1>My House - Um experimento hexagonal com Spring Boot</h1>
+
+    <ul>
+      <li><a href="https://github.com/ojuliomiguel/my-house" target="_blank">Código Fonte</a></li>
+    </ul>
+
+    <p>
+      <em>"What goes inside the hexagon? I don't care."</em> - Cockburn
+    </p>
+
+    <img id="project--img" src="https://raw.githubusercontent.com/ojuliomiguel/my-house/refs/heads/main/ports_and_adapters_flow.jpeg" alt="Hexagonal Architecture Diagram">
+
+    <p>
+      O projeto "myhouse" foi desenvolvido com arquitetura hexagonal (também conhecida como Ports And Adapters) para
+      gerenciar a complexidade do software e manter uma separação clara entre as regras de negócios.
+      manutenção.
+    </p>
+
+    <h3>Principais Características</h3>
+
+    <ul>
+      <li>Arquitetura Hexagonal (Ports and Adapters)</li>
+      <li>Separação clara entre domínio e infraestrutura</li>
+      <li>API REST para gerenciamento de famílias</li>
+      <li>Sistema de elegibilidade baseado em renda e dependentes</li>
+      <li>Containerização com Docker</li>
+      <li>Testes automatizados</li>
+    </ul>
+
+    <h3>Tecnologias Utilizadas</h3>
+
+    <ul>
+      <li>Java 17</li>
+      <li>Spring Boot</li>
+      <li>Maven</li>
+      <li>Docker</li>
+    </ul>
+
+    <h3>Arquitetura</h3>
+
+    <p>
+      O projeto segue os princípios da arquitetura hexagonal, onde o núcleo da aplicação (domínio) é independente de
+      frameworks e tecnologias específicas. As regras de negócio ficam isoladas no centro, enquanto os adaptadores (como
+      APIs REST, bancos de dados, etc.) ficam na camada externa, permitindo maior flexibilidade e testabilidade.
+    </p>
+
+  </div>
+</body>
+
+</html>

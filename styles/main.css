@@ -299,8 +299,8 @@ h2 i {
 
 #project--img {
   display: block;
-  height: 273px;
-  width: 567px;
+  max-width: 100%;
+  height: auto;
   margin-left: auto;
   margin-right: auto;
 }
