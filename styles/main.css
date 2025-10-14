@@ -91,7 +91,8 @@ a {
   justify-content: center;
   column-gap: 1.2em;
   row-gap: 1em;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  padding: 0.5em 0;
 }
 
 #socials--list a {
@@ -106,6 +107,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.6em;
+  white-space: nowrap;
 }
 
 #socials--list a i {
@@ -118,6 +120,36 @@ a {
   border-color: var(--mainLinkColor);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media(max-width: 768px) {
+  #socials--list {
+    column-gap: 0.8em;
+  }
+
+  #socials--list a {
+    font-size: 0.95em;
+    padding: 0.6em 1em;
+  }
+
+  #socials--list a i {
+    font-size: 1.1em;
+  }
+}
+
+@media(max-width: 480px) {
+  #socials--list {
+    column-gap: 0.6em;
+  }
+
+  #socials--list a {
+    font-size: 0.85em;
+    padding: 0.5em 0.8em;
+  }
+
+  #socials--list a i {
+    font-size: 1em;
+  }
 }
 
 #qualifications--list {
