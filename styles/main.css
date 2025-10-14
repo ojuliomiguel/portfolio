@@ -231,8 +231,6 @@ h2 i {
     flex: 1 1 100%;
   }
 }
-  font-size: 1.1em;
-}
 
 .card--work-history {
   border-left: 2px solid var(--mainBorderColor);
@@ -423,19 +421,20 @@ h2 i {
 
 #wrapper--projects {
   display: flex;
-  gap: 1.5em;
+  gap: 0.8em;
   width: 100%;
+  flex-shrink: 0;
 }
 
 .card--project-enhanced {
-  min-width: calc(50% - 0.75em);
-  flex: 0 0 calc(50% - 0.75em);
+  flex: 1 1 0;
+  min-width: 0;
   border: 1px solid var(--mainBorderColor);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.02);
   transition: all 0.3s ease;
   box-sizing: border-box;
-  min-height: 160px;
+  height: 180px;
 }
 
 .card--project-enhanced:hover {
@@ -447,20 +446,20 @@ h2 i {
 .card--project-enhanced a {
   display: flex;
   flex-direction: row;
-  padding: 1.5em;
+  padding: 1.2em 1em;
   text-decoration: none;
   color: var(--mainTextColor);
-  gap: 1.2em;
+  gap: 1em;
   align-items: center;
   width: 100%;
-  min-height: 160px;
+  height: 100%;
   box-sizing: border-box;
 }
 
 .card--project-enhanced .project-icon {
   flex-shrink: 0;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -470,7 +469,7 @@ h2 i {
 }
 
 .card--project-enhanced .project-icon i {
-  font-size: 1.8em;
+  font-size: 1.5em;
   transition: transform 0.3s ease;
 }
 
@@ -487,18 +486,19 @@ h2 i {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  justify-content: center;
+  gap: 0.4em;
   min-width: 0;
   overflow: visible;
 }
 
 .card--project-enhanced .project-content h3 {
   margin: 0;
-  font-size: 1.05em;
+  font-size: 0.95em;
   font-weight: 600;
   color: var(--mainTextColor);
   transition: color 0.3s ease;
-  line-height: 1.3;
+  line-height: 1.2;
   overflow: visible;
   text-overflow: clip;
   white-space: normal;
@@ -510,9 +510,9 @@ h2 i {
 
 .card--project-enhanced .project-content p {
   margin: 0;
-  font-size: 0.85em;
+  font-size: 0.75em;
   color: var(--secondaryTextColor);
-  line-height: 1.4;
+  line-height: 1.3;
   overflow: visible;
   white-space: normal;
 }
@@ -520,14 +520,14 @@ h2 i {
 .card--project-enhanced .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4em;
-  margin-top: 0.2em;
+  gap: 0.3em;
+  margin-top: 0.3em;
 }
 
 .card--project-enhanced .project-tags .tag {
-  font-size: 0.7em;
-  padding: 0.3em 0.7em;
-  border-radius: 10px;
+  font-size: 0.62em;
+  padding: 0.25em 0.55em;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--mainBorderColor);
   color: var(--secondaryTextColor);
@@ -637,34 +637,33 @@ h2 i {
   .card--project-enhanced {
     min-width: 100%;
     flex: 0 0 100%;
-    min-height: 150px;
+    height: 160px;
   }
   
   .card--project-enhanced a {
-    padding: 1.2em;
-    gap: 1em;
-    min-height: 150px;
+    padding: 1em;
+    gap: 0.8em;
   }
   
   .card--project-enhanced .project-icon {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
   }
   
   .card--project-enhanced .project-icon i {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
   
   .card--project-enhanced .project-content h3 {
-    font-size: 1em;
+    font-size: 0.9em;
   }
   
   .card--project-enhanced .project-content p {
-    font-size: 0.8em;
+    font-size: 0.72em;
   }
   
   .card--project-enhanced .project-tags .tag {
-    font-size: 0.65em;
+    font-size: 0.6em;
   }
   
   .carousel-indicators {
@@ -674,19 +673,15 @@ h2 i {
 
 @media(min-width: 769px) and (max-width: 1024px) {
   .card--project-enhanced {
-    min-height: 155px;
-  }
-  
-  .card--project-enhanced a {
-    min-height: 155px;
+    height: 170px;
   }
   
   .card--project-enhanced .project-content h3 {
-    font-size: 1em;
+    font-size: 0.92em;
   }
   
   .card--project-enhanced .project-content p {
-    font-size: 0.8em;
+    font-size: 0.73em;
   }
 }
 
