@@ -143,7 +143,6 @@ a {
   transform: scale(1.1);
 }
 
-/* Cores dos ícones de qualificações */
 #qualifications--list li:nth-child(1) i {
   color: #3498db;
 }
@@ -205,7 +204,6 @@ h2 i {
   transform: scale(1.1);
 }
 
-/* Cores temáticas para cada categoria de tech skill */
 .tech-architecture i {
   color: #3498db;
 }
@@ -304,7 +302,6 @@ h2 i {
   color: var(--mainLinkColor);
 }
 
-/* Company icon colors */
 .company-icon-bitlob {
   color: #2E86AB !important;
 }
@@ -412,18 +409,22 @@ h2 i {
 .carousel-wrapper {
   overflow: hidden;
   width: 100%;
+  position: relative;
 }
 
 .carousel-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  width: 100%;
 }
 
-#wrapper--projects {
+.carousel-slide {
   display: flex;
   gap: 0.8em;
   width: 100%;
   flex-shrink: 0;
+  min-width: 100%;
+  box-sizing: border-box;
 }
 
 .card--project-enhanced {
@@ -540,7 +541,6 @@ h2 i {
   border-color: var(--mainLinkColor);
 }
 
-/* Carousel Navigation Buttons */
 .carousel-btn {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--mainBorderColor);
@@ -572,7 +572,6 @@ h2 i {
   color: inherit;
 }
 
-/* Carousel Indicators */
 .carousel-indicators {
   display: flex;
   justify-content: center;
@@ -602,7 +601,6 @@ h2 i {
   border-radius: 5px;
 }
 
-/* Project-specific icon colors */
 .project-myhouse .project-icon i {
   color: #3498db;
 }
@@ -634,36 +632,56 @@ h2 i {
     font-size: 0.9em;
   }
   
+  .carousel-slide {
+    gap: 0.5em;
+    padding: 0 0.1em;
+  }
+  
   .card--project-enhanced {
-    min-width: 100%;
-    flex: 0 0 100%;
-    height: 160px;
+    flex: 1 1 calc(50% - 0.25em);
+    min-width: calc(50% - 0.25em);
+    max-width: calc(50% - 0.25em);
+    height: auto;
+    min-height: 160px;
   }
   
   .card--project-enhanced a {
-    padding: 1em;
-    gap: 0.8em;
+    padding: 0.8em;
+    gap: 0.6em;
+    flex-direction: column;
+    text-align: center;
   }
   
   .card--project-enhanced .project-icon {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
   }
   
   .card--project-enhanced .project-icon i {
-    font-size: 1.3em;
+    font-size: 1.2em;
+  }
+  
+  .card--project-enhanced .project-content {
+    align-items: center;
   }
   
   .card--project-enhanced .project-content h3 {
-    font-size: 0.9em;
+    font-size: 0.85em;
   }
   
   .card--project-enhanced .project-content p {
-    font-size: 0.72em;
+    font-size: 0.68em;
+    text-align: center;
+  }
+  
+  .card--project-enhanced .project-tags {
+    justify-content: center;
   }
   
   .card--project-enhanced .project-tags .tag {
-    font-size: 0.6em;
+    font-size: 0.55em;
+    padding: 0.2em 0.45em;
   }
   
   .carousel-indicators {
@@ -727,6 +745,49 @@ h2 i {
 
   #qualifications--list {
     grid-template-columns: 1fr;
+  }
+  
+  .carousel-slide {
+    justify-content: center;
+  }
+  
+  .card--project-enhanced {
+    flex: 1 1 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 160px;
+  }
+  
+  .card--project-enhanced a {
+    flex-direction: row;
+    text-align: left;
+    padding: 1em;
+    gap: 0.8em;
+  }
+  
+  .card--project-enhanced .project-icon {
+    margin: 0;
+  }
+  
+  .card--project-enhanced .project-content {
+    align-items: flex-start;
+  }
+  
+  .card--project-enhanced .project-content h3 {
+    font-size: 0.9em;
+  }
+  
+  .card--project-enhanced .project-content p {
+    font-size: 0.72em;
+    text-align: left;
+  }
+  
+  .card--project-enhanced .project-tags {
+    justify-content: flex-start;
+  }
+  
+  .card--project-enhanced .project-tags .tag {
+    font-size: 0.58em;
   }
 }
 

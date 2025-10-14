@@ -279,8 +279,7 @@
         <div class="carousel-wrapper">
           <div class="carousel-track" id="projectsCarousel">
             
-            <!-- Slide 1: My House + Chatbot -->
-            <div id="wrapper--projects">
+            <div class="carousel-slide">
               <div class="card--project-enhanced project-myhouse">
                 <a href="./projects/myhouse.html">
                   <div class="project-icon">
@@ -316,8 +315,7 @@
               </div>
             </div>
 
-            <!-- Slide 2: Food Facts + MyLivros -->
-            <div id="wrapper--projects">
+            <div class="carousel-slide">
               <div class="card--project-enhanced project-nest">
                 <a href="./projects/nest.html">
                   <div class="project-icon">
@@ -353,8 +351,7 @@
               </div>
             </div>
 
-            <!-- Slide 3: Todo App (single card) -->
-            <div id="wrapper--projects">
+            <div class="carousel-slide">
               <div class="card--project-enhanced project-todo">
                 <a href="./projects/todo.html">
                   <div class="project-icon">
@@ -406,17 +403,55 @@
     }
 
     let currentSlide = 0;
+    let totalSlides = 0;
+    let isSmallScreen = false;
     const carousel = document.getElementById('projectsCarousel');
-    const slides = carousel.querySelectorAll('#wrapper--projects');
-    const totalSlides = slides.length;
     const indicatorsContainer = document.getElementById('projectsIndicators');
-
-    for (let i = 0; i < totalSlides; i++) {
-      const indicator = document.createElement('div');
-      indicator.classList.add('indicator');
-      if (i === 0) indicator.classList.add('active');
-      indicator.addEventListener('click', () => goToSlide(i));
-      indicatorsContainer.appendChild(indicator);
+    
+    const originalSlides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+    
+    function initCarousel() {
+      const wasSmallScreen = isSmallScreen;
+      isSmallScreen = window.innerWidth <= 600;
+      
+      if (wasSmallScreen !== isSmallScreen) {
+        currentSlide = 0;
+        buildCarousel();
+      }
+    }
+    
+    function buildCarousel() {
+      carousel.innerHTML = '';
+      indicatorsContainer.innerHTML = '';
+      
+      if (isSmallScreen) {
+        originalSlides.forEach(originalSlide => {
+          const cards = Array.from(originalSlide.querySelectorAll('.card--project-enhanced'));
+          cards.forEach(card => {
+            const slide = document.createElement('div');
+            slide.classList.add('carousel-slide');
+            slide.appendChild(card.cloneNode(true));
+            carousel.appendChild(slide);
+          });
+        });
+      } else {
+        originalSlides.forEach(originalSlide => {
+          carousel.appendChild(originalSlide.cloneNode(true));
+        });
+      }
+      
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      totalSlides = slides.length;
+      
+      for (let i = 0; i < totalSlides; i++) {
+        const indicator = document.createElement('div');
+        indicator.classList.add('indicator');
+        if (i === 0) indicator.classList.add('active');
+        indicator.addEventListener('click', () => goToSlide(i));
+        indicatorsContainer.appendChild(indicator);
+      }
+      
+      updateCarousel();
     }
 
     function moveCarousel(direction) {
@@ -445,6 +480,16 @@
         indicator.classList.toggle('active', index === currentSlide);
       });
     }
+    
+    initCarousel();
+    
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        initCarousel();
+      }, 250);
+    });
   </script>
 
 </body>
