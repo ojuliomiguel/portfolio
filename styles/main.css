@@ -88,22 +88,36 @@ a {
 
 #socials--list {
   display: flex;
-  justify-content: space-between;
-  column-gap: 1em;
+  justify-content: center;
+  column-gap: 1.2em;
+  row-gap: 1em;
   flex-wrap: wrap;
 }
 
 #socials--list a {
-  font-weight: 300;
+  font-weight: 500;
   color: var(--secondaryTextColor);
-  font-size: 0.9em;
-  transition: 0.3s;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+  padding: 0.7em 1.3em;
+  border: 2px solid var(--previewShadow);
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
+#socials--list a i {
+  font-size: 1.2em;
 }
 
 #socials--list a:hover {
-  font-weight: 100;
+  font-weight: 500;
   color: var(--mainLinkColor);
-  font-size: 0.9em;
+  border-color: var(--mainLinkColor);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #qualifications--list {
