@@ -20,6 +20,14 @@
   --mainBgColor: var(--mainBgColor-dark);
 }
 
+html.light-mode {
+  --mainTextColor: var(--mainTextColor-light);
+  --secondaryTextColor: var(--secondaryTextColor-light);
+  --mainLinkColor: var(--mainLinkColor-light);
+  --mainBorderColor: var(--mainBorderColor-light);
+  --mainBgColor: var(--mainBgColor-light);
+}
+
 * {
   font-family: 'Readex Pro';
   line-height: 1.5em;
@@ -855,4 +863,30 @@ h2 i {
 
 #btnTopo:hover {
   background-color: #333;
+}
+
+#btn--theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--mainBorderColor);
+  color: var(--mainTextColor);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+}
+
+#btn--theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--mainLinkColor);
+  color: var(--mainLinkColor);
+  transform: scale(1.1);
 }
