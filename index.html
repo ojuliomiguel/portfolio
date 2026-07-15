@@ -4,526 +4,335 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Júlio Miguel - Engenheiro de Software</title>
+  <title>Júlio Miguel — Engenheiro de Software</title>
   <meta name="description"
-    content="Portfólio de Júlio Miguel - Engenheiro de Software com 7 anos de experiência em desenvolvimento e modernização de sistemas">
-  <meta name="keywords" content="engenheiro de software, desenvolvimento web, programador, desenvolvedor full stack">
+    content="Portfólio de Júlio Miguel, engenheiro de software especializado em arquitetura, modernização de sistemas e liderança técnica.">
+  <meta name="keywords" content="engenheiro de software, arquitetura de software, backend, liderança técnica">
   <meta name="author" content="Júlio Miguel">
   <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" media="screen" href='./styles/main.css'>
+  <meta name="theme-color" content="#0c1117">
+  <link rel="stylesheet" href="./styles/main.css">
   <link rel="icon" href="assets/icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Júlio Miguel - Desenvolvedor e Engenheiro de Software">
-  <meta property="og:description"
-    content="Portfólio de Júlio Miguel - Desenvolvedor e Engenheiro de Software com 5 anos de experiência">
+  <meta property="og:title" content="Júlio Miguel — Engenheiro de Software">
+  <meta property="og:description" content="Arquitetura, modernização de sistemas e liderança técnica.">
   <meta property="og:image" content="./assets/profile_pic.jpeg">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script>
-    (function () {
-      if (localStorage.getItem('theme') === 'light') {
-        document.documentElement.classList.add('light-mode');
-      }
-    })();
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.add('light-mode');
+    }
   </script>
 </head>
 
 <body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-  <button id="btn--theme-toggle" onclick="toggleTheme()" title="Alternar tema">
-    <i class="fas fa-moon"></i>
+  <header class="site-header">
+    <a class="brand" href="#sobre" aria-label="Júlio Miguel — início">
+      <span class="brand-mark" aria-hidden="true">JM</span>
+      <span>Júlio Miguel</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#projetos">Projetos</a>
+    </nav>
+
+    <button id="btn--theme-toggle" type="button" aria-label="Ativar tema claro" title="Alternar tema">
+      <i class="fas fa-moon" aria-hidden="true"></i>
+    </button>
+  </header>
+
+  <main id="conteudo">
+    <section id="sobre" class="hero section--page">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Engenheiro de software · Maceió, AL</p>
+        <h1>Construo software que continua <span>fazendo sentido</span> quando cresce.</h1>
+        <p class="hero-description">
+          Sou Júlio Miguel. Há 7 anos transformo regras de negócio complexas em sistemas claros, resilientes e
+          sustentáveis — do código à liderança técnica.
+        </p>
+
+        <div class="hero-actions" aria-label="Links profissionais">
+          <a class="button button--primary" href="mailto:juliomiguelsouzacosta@gmail.com">
+            Vamos conversar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+          <a class="button button--quiet" href="https://drive.google.com/file/d/1kvdUJJlVpFOnD_aYkVkgNoC9f4QKungT/view?usp=sharing" target="_blank" rel="noreferrer">
+            Ver currículo <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div id="socials--list">
+          <a href="https://www.linkedin.com/in/ojuliomiguel" target="_blank" rel="noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+          <a href="https://github.com/ojuliomiguel" target="_blank" rel="noreferrer"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+          <a href="https://eldarscode.substack.com/" target="_blank" rel="noreferrer"><i class="fas fa-envelope" aria-hidden="true"></i> Newsletter</a>
+        </div>
+      </div>
+
+      <aside class="hero-profile" aria-label="Resumo profissional">
+        <div class="portrait-frame">
+          <img id="profile-pic" src="./assets/profile_pic.jpeg" alt="Júlio Miguel sorrindo">
+          <span class="portrait-label">JM / 2026</span>
+        </div>
+        <dl class="profile-stats">
+          <div><dt>Experiência</dt><dd>7 anos</dd></div>
+          <div><dt>Foco atual</dt><dd>Backend &amp; arquitetura</dd></div>
+          <div><dt>Também escrevo sobre</dt><dd>Software e livros</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="section--page expertise" aria-labelledby="expertise-title">
+      <div class="section-heading">
+        <p class="section-index">01 / prática</p>
+        <h2 id="expertise-title">Engenharia com visão de produto e de longo prazo.</h2>
+      </div>
+
+      <div class="expertise-grid">
+        <article class="expertise-intro">
+          <p>
+            Minha especialidade é evoluir sistemas sem perder de vista quem depende deles. Trabalho na interseção entre
+            arquitetura, entrega e desenvolvimento de pessoas.
+          </p>
+          <ul id="qualifications--list">
+            <li><i class="fas fa-graduation-cap" aria-hidden="true"></i><span>Bacharel em Ciência da Computação pela UFAL</span></li>
+            <li><i class="fas fa-users-cog" aria-hidden="true"></i><span>Dev Leader e engenheiro de software</span></li>
+            <li><i class="fas fa-sync-alt" aria-hidden="true"></i><span>Modernização de sistemas legados</span></li>
+          </ul>
+        </article>
+
+        <div id="wrapper--techstack__items">
+          <article class="card--techstack">
+            <p class="tech-label">Arquitetura</p>
+            <p>Clean Architecture, DDD, microsserviços e sistemas orientados a eventos.</p>
+          </article>
+          <article class="card--techstack">
+            <p class="tech-label">Linguagens &amp; frameworks</p>
+            <p>Node.js, TypeScript, Java, Spring Boot, React, Python, C# e Delphi.</p>
+          </article>
+          <article class="card--techstack">
+            <p class="tech-label">Dados &amp; mensageria</p>
+            <p>PostgreSQL, MySQL, MongoDB, Oracle, Kafka, RabbitMQ e SQS.</p>
+          </article>
+          <article class="card--techstack">
+            <p class="tech-label">Plataforma</p>
+            <p>AWS, Docker, Kubernetes, testes automatizados e CI/CD.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia" class="section--page" aria-labelledby="experience-title">
+      <div class="section-heading section-heading--split">
+        <div>
+          <p class="section-index">02 / trajetória</p>
+          <h2 id="experience-title">Experiência profissional</h2>
+        </div>
+        <p>Uma leitura cronológica das responsabilidades e dos resultados mais relevantes.</p>
+      </div>
+
+      <div class="career-timeline">
+        <article class="career-entry career-entry--current">
+          <div class="career-meta">
+            <span class="career-period">set 2024 — atual</span>
+            <strong>Digix</strong>
+            <span>Educação · Finanças</span>
+          </div>
+          <div class="career-body">
+            <header class="career-title">
+              <div><span class="career-status">Atuação atual</span><h3>Dev Leader / Desenvolvedor Full Stack</h3></div>
+              <span class="career-order">01</span>
+            </header>
+            <p class="career-summary">Liderança técnica no módulo financeiro do CheffEscolar, responsável por apoiar a prestação de contas de milhares de escolas.</p>
+            <ul class="career-highlights">
+              <li><span>Arquitetura</span><p>Evolução do monólito para uma arquitetura modular orientada a features.</p></li>
+              <li><span>Modernização</span><p>Migração de Java 8 para Java 21 e Spring Boot 3.</p></li>
+              <li><span>Integração</span><p>Arquitetura orientada a eventos com Kafka e participação na criação do BFF.</p></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="career-entry career-entry--current">
+          <div class="career-meta">
+            <span class="career-period">dez 2019 — atual</span>
+            <strong>Bitlob IT Solutions</strong>
+            <span>Consultoria</span>
+          </div>
+          <div class="career-body">
+            <header class="career-title">
+              <div><span class="career-status">Atuação atual</span><h3>Consultor / Engenheiro de Software</h3></div>
+              <span class="career-order">02</span>
+            </header>
+            <p class="career-summary">Engenharia backend para produtos de logística, educação, fintech, automação comercial e software sob encomenda.</p>
+            <ul class="career-highlights">
+              <li><span>Logshare</span><p>Padronização de processos e migração de algoritmos de Backhaul para uma arquitetura escalável de planejamento de rotas.</p></li>
+              <li><span>MyIntercâmbio</span><p>Chatbots em Node.js e TypeScript com State e Strategy para organizar fluxos simultâneos no WhatsApp.</p></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="career-entry">
+          <div class="career-meta">
+            <span class="career-period">fev 2023 — abr 2024</span>
+            <strong>Yduqs / Estácio</strong>
+            <span>Educação</span>
+          </div>
+          <div class="career-body">
+            <header class="career-title"><h3>Dev Leader</h3><span class="career-order">03</span></header>
+            <p class="career-summary">Liderança técnica na evolução da Aplicação Docente e em uma solução de correção automática de provas utilizada por mais de 10 mil professores.</p>
+            <ul class="career-highlights">
+              <li><span>Escala</span><p>Arquitetura baseada em eventos e microsserviços, com otimizações de performance e custo.</p></li>
+              <li><span>Qualidade</span><p>Testes automatizados, CI/CD, mentoria técnica e desenvolvimento da equipe.</p></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="career-entry">
+          <div class="career-meta">
+            <span class="career-period">mai 2022 — fev 2023</span>
+            <strong>Ame Digital / Creditas</strong>
+            <span>Serviços financeiros</span>
+          </div>
+          <div class="career-body">
+            <header class="career-title"><h3>Desenvolvedor Backend</h3><span class="career-order">04</span></header>
+            <p class="career-summary">Desenvolvimento de soluções de contabilidade e Ledger para transações financeiras de alto volume.</p>
+            <ul class="career-highlights">
+              <li><span>Backend</span><p>APIs REST com Node.js e TypeScript, integrações financeiras e modelagem de regras contábeis.</p></li>
+              <li><span>Confiabilidade</span><p>Desenvolvimento orientado a testes aplicado a fluxos financeiros críticos.</p></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="career-entry">
+          <div class="career-meta">
+            <span class="career-period">jan 2020 — jul 2021</span>
+            <strong>Plussoft</strong>
+            <span>Software corporativo</span>
+          </div>
+          <div class="career-body">
+            <header class="career-title"><h3>Desenvolvedor de Software</h3><span class="career-order">05</span></header>
+            <p class="career-summary">Integração e modernização de sistemas legados em Delphi com serviços web e infraestrutura cloud.</p>
+            <ul class="career-highlights">
+              <li><span>Integrações</span><p>APIs REST, chatbots para WhatsApp e Telegram e aplicações desktop integradas à nuvem.</p></li>
+              <li><span>Legado</span><p>Manutenção evolutiva de sistemas essenciais à operação de clientes.</p></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="career-entry career-entry--compact">
+          <div class="career-meta">
+            <span class="career-period">ago 2020 — mai 2022</span>
+            <strong>Outras atuações</strong>
+            <span>Projetos simultâneos</span>
+          </div>
+          <div class="career-body">
+            <header class="career-title"><h3>Engenharia backend em diferentes domínios</h3><span class="career-order">06</span></header>
+            <p class="career-summary">FCamara, AWS-Code, Intelitrader e MyIntercâmbio: projetos de gestão de ideias, risco financeiro, microsserviços e automação de atendimento.</p>
+            <p class="career-stack">Node.js · TypeScript · C# · ASP.NET · AWS · PostgreSQL · MongoDB</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projetos" class="section--page" aria-labelledby="projects-title">
+      <div class="section-heading section-heading--split">
+        <div>
+          <p class="section-index">03 / laboratório</p>
+          <h2 id="projects-title">Projetos selecionados</h2>
+        </div>
+        <p>Experimentos onde arquitetura vira código.</p>
+      </div>
+
+      <div class="project-index-head" aria-hidden="true">
+        <span>ID</span><span>Projeto</span><span>Tecnologias</span><span>Acesso</span>
+      </div>
+      <ol class="project-index">
+        <li>
+          <a class="project-row project-row--primary" href="./projects/myhouse.html">
+            <span class="project-number">P.01</span>
+            <div class="project-summary"><span class="project-kicker">Arquitetura aplicada</span><h3>My House</h3><p>Um experimento prático de Ports &amp; Adapters aplicado ao gerenciamento residencial.</p></div>
+            <ul class="project-tags" aria-label="Tecnologias"><li>Spring Boot</li><li>Hexagonal</li><li>Java</li></ul>
+            <span class="project-access">Ver projeto <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+          </a>
+        </li>
+        <li>
+          <a class="project-row" href="./projects/chatbot.html">
+            <span class="project-number">P.02</span>
+            <div class="project-summary"><span class="project-kicker">Automação</span><h3>WhatsApp Bot</h3><p>Validação de CEP e fluxos de conversa organizados com padrões de projeto.</p></div>
+            <ul class="project-tags" aria-label="Tecnologias"><li>Node.js</li><li>TypeScript</li></ul>
+            <span class="project-access">Ver projeto <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+          </a>
+        </li>
+        <li>
+          <a class="project-row" href="./projects/nest.html">
+            <span class="project-number">P.03</span>
+            <div class="project-summary"><span class="project-kicker">Processamento</span><h3>Food Facts</h3><p>API com tarefas agendadas para coleta e processamento de dados nutricionais.</p></div>
+            <ul class="project-tags" aria-label="Tecnologias"><li>NestJS</li><li>CRON</li><li>MongoDB</li></ul>
+            <span class="project-access">Ver projeto <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+          </a>
+        </li>
+        <li>
+          <a class="project-row" href="./projects/mylivros.html">
+            <span class="project-number">P.04</span>
+            <div class="project-summary"><span class="project-kicker">Produto pessoal</span><h3>MyLivros</h3><p>Biblioteca pessoal para organizar acervo, leituras e descobertas.</p></div>
+            <ul class="project-tags" aria-label="Tecnologias"><li>React</li><li>Node.js</li><li>PostgreSQL</li></ul>
+            <span class="project-access">Ver projeto <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+          </a>
+        </li>
+        <li>
+          <a class="project-row" href="./projects/todo.html">
+            <span class="project-number">P.05</span>
+            <div class="project-summary"><span class="project-kicker">Fundamentos web</span><h3>Vanilla Todo</h3><p>Aplicação de tarefas leve, sem framework, com persistência local.</p></div>
+            <ul class="project-tags" aria-label="Tecnologias"><li>JavaScript</li><li>HTML</li><li>CSS</li></ul>
+            <span class="project-access">Ver projeto <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+          </a>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <p class="section-index">04 / contato</p>
+      <h2>Um bom sistema começa com uma boa conversa.</h2>
+    </div>
+    <a class="button button--primary" href="mailto:juliomiguelsouzacosta@gmail.com">Enviar um e-mail <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    <p class="footer-note">© 2026 Júlio Miguel · Feito com HTML, CSS e cuidado.</p>
+  </footer>
+
+  <button id="btnTopo" type="button" class="go--to-top-bnt" aria-label="Voltar ao topo">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
   </button>
 
-  <div id="container--main">
-
-    <section id="wrapper--hero" class="section-page">
-      <img id="profile-pic" src="./assets/profile_pic.jpeg" />
-
-      <div>
-        <h1 id="user-name">Júlio Miguel</h1>
-        <p id="bio">
-          Engenheiro de Software.
-          <br>
-          Café para energizar ☕️, livros para sonhar e códigos para transformar.
-        </p>
-        <p id="email">📭 juliomiguelsouzacosta@gmail.com</p>
-      </div>
-
-    </section>
-
-    <section class="section--page">
-
-      <div id="socials--list">
-        <a href="https://www.linkedin.com/in/ojuliomiguel" target="_blank">
-          <i class="fab fa-linkedin"></i> Linkedin
-        </a>
-        <a href="https://github.com/ojuliomiguel" target="_blank">
-          <i class="fab fa-github"></i> Github
-        </a>
-        <a href="https://eldarscode.substack.com/" target="_blank">
-          <i class="fas fa-envelope"></i> Newsletter
-        </a>
-        <a href="https://drive.google.com/file/d/1kvdUJJlVpFOnD_aYkVkgNoC9f4QKungT/view?usp=sharing" target="_blank">
-          <i class="fas fa-file-pdf"></i> Currículo
-        </a>
-      </div>
-
-    </section>
-
-    <section class="section--page">
-      <h2>Habilidades & Qualificações</h2>
-      <ul id="qualifications--list">
-        <li><i class="fas fa-graduation-cap"></i> Bacharel em Ciência da Computação pela Universidade Federal de Alagoas
-        </li>
-        <li><i class="fas fa-code-branch"></i> 7 anos de experiência profissional em Desenvolvimento de Software</li>
-        <li><i class="fas fa-users-cog"></i> Dev Leader | Engenheiro de Software</li>
-        <li><i class="fas fa-sync-alt"></i> Integrações e modernizações de sistemas legados</li>
-      </ul>
-    </section>
-
-    <section class="section--page">
-      <h2>Tech Skills</h2>
-
-      <div id="wrapper--techstack__items">
-
-        <div class="card--techstack tech-architecture">
-          <span><i class="fas fa-sitemap"></i> Clean Architecture, Domain Driven Design, Microservices, Event-Driven Architecture </span>
-        </div>
-
-        <div class="card--techstack tech-languages">
-          <span><i class="fas fa-code"></i> Nodejs, JavaScript, TypesScript, React, Python, Java, Delphi, C#</span>
-        </div>
-
-        <div class="card--techstack tech-databases">
-          <span><i class="fas fa-database"></i> Postgres, MySQL, MongoDB, Oracle, DynamoDB</span>
-        </div>
-
-        <div class="card--techstack tech-messaging">
-          <span><i class="fas fa-exchange-alt"></i> Kafka, RabbitMQ, SQS</span>
-        </div>
-
-        <div class="card--techstack tech-devops">
-          <span><i class="fab fa-docker"></i> Docker, AWS, Kubernetes</span>
-        </div>
-
-      </div>
-
-    </section>
-
-    <section class="section--page">
-      <h2>Experiências Profissionais</h2>
-
-      <div class="card--work-history">
-        <div class="card--work-history-header" onclick="toggleExperience(this)">
-          <div>
-            <strong><i class="fas fa-briefcase company-icon-bitlob"></i>CONSULTOR/ENGENHEIRO DE SOFTWARE | BITLOB IT SOLUTIONS</strong>
-            <p class="period"><i class="far fa-calendar-alt"></i> dezembro 2019 - o momento</p>
-          </div>
-          <span class="toggle-icon">▼</span>
-        </div>
-        <div class="card--work-history-content">
-          <p>
-            Nos últimos anos, minha atuação tem sido em Engenharia de Software e Desenvolvimento Backend. Trabalhei em
-            diversos setores, incluindo Fintech, Logístico, Educação, Automação Comercial e Software por Encomenda
-          </p>
-          <ul>
-            <li>Atuando como Consultor e Engenheiro de Software na startup Logshare, que
-              em 2024 captou R$ 12 milhões em rodada Seed para expandir seu portfólio e atuação internacional. Fui
-              responsável pela implementação de padronização de processos e migração de algoritmos de
-              Backhaul para uma arquitetura escalável e eficiente no planejamento de rotas.</li>
-            <li>Desenvolvi ChatBots para WhatsApp utilizando Node.js para a empresa de
-              intercâmbio
-              MyIntercâmbio, com foco no envio de mensagens automáticas. O projeto visava integrar-se a
-              uma base de clientes e, com base em parâmetros de negócios, enviar mensagens automáticas
-              para sugerir produtos relevantes aos clientes. Toda a aplicação foi construída com Node.js e
-              TypeScript, utilizando alguns Design Patterns, destacando-se o pattern State para gerenciar os
-              menus e a navegação dos usuários simultâneos.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card--work-history">
-        <div class="card--work-history-header" onclick="toggleExperience(this)">
-          <div>
-            <strong><i class="fas fa-school company-icon-digix"></i>DEV LEADER/DESENVOLVEDOR FULLSTACK | DIGIX</strong>
-            <p class="period"><i class="far fa-calendar-alt"></i> setembro 2024 - o momento</p>
-          </div>
-          <span class="toggle-icon">▼</span>
-        </div>
-        <div class="card--work-history-content">
-          <p>
-            Atuando como Dev Leader no módulo financeiro do CheffEscolar, com o objetivo de
-            garantir uma prestação de contas precisa e eficaz no processo de aquisição de milhares de
-            escolas em estados como Paraná, Mato Grosso do Sul e Piauí.
-          </p>
-          <ul>
-            <li>Modernização da arquitetura monolítica para monolito modular (Feature-First)</li>
-            <li>Migração de módulos do Java 8 para Java 21 e Spring Boot 3</li>
-            <li>Arquitetura orientada a eventos com Kafka</li>
-            <li>Coparticipação na criação do Backend For Frontend (BFF) do produto CheffEscolar</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card--work-history">
-        <div class="card--work-history-header" onclick="toggleExperience(this)">
-          <div>
-            <strong><i class="fas fa-graduation-cap company-icon-yduqs"></i>DEV LEADER | YDUQS/ESTACIO</strong>
-            <p class="period"><i class="far fa-calendar-alt"></i> Fevereiro 2023 - Abril 2024 • 1 ano e 3 meses</p>
-          </div>
-          <span class="toggle-icon">▼</span>
-        </div>
-        <div class="card--work-history-content">
-          <p>
-            Liderança técnica na evolução da Aplicação Docente, implementando práticas modernas de desenvolvimento e
-            arquitetura de software.
-            Responsável por conduzir uma equipe focada em desenvolver soluções escaláveis e resilientes, incluindo um
-            sistema inovador
-            de correção automática de provas que atende mais de 10 mil professores.
-          </p>
-          <ul>
-            <li>Implementação de arquitetura baseada em eventos e microserviços</li>
-            <li>Otimização de performance e redução significativa de custos operacionais
-            </li>
-            <li>Implementação de testes automatizados e CI/CD</li>
-            <li>Mentoria técnica e gestão de equipe</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card--work-history">
-        <div class="card--work-history-header" onclick="toggleExperience(this)">
-          <div>
-            <strong><i class="fas fa-wallet company-icon-ame"></i>DESENVOLVEDOR BACKEND | AME DIGITAL/CREDITAS</strong>
-            <p class="period"><i class="far fa-calendar-alt"></i> Maio 2022 - Fevereiro 2023 • 10 meses</p>
-          </div>
-          <span class="toggle-icon">▼</span>
-        </div>
-        <div class="card--work-history-content">
-          <p>
-            Desenvolvimento de soluções financeiras robustas focadas em Contabilidade e Ledger (Livro-razão),
-            garantindo precisão e confiabilidade em transações financeiras de alto volume.
-          </p>
-          <ul>
-            <li>Desenvolvimento de APIs RESTful com Node.js e TypeScript</li>
-            <li>Implementação de sistemas contábeis complexos</li>
-            <li>Desenvolvimento orientado a testes (TDD)</li>
-            <li>Integração com sistemas financeiros</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card--work-history">
-        <div class="card--work-history-header" onclick="toggleExperience(this)">
-          <div>
-            <strong><i class="fas fa-wrench company-icon-plussoft"></i>DESENVOLVEDOR DE SOFTWARE | PLUSSOFT</strong>
-            <p class="period"><i class="far fa-calendar-alt"></i> Janeiro 2020 - Julho 2021 • 1 ano e 7 meses</p>
-          </div>
-          <span class="toggle-icon">▼</span>
-        </div>
-        <div class="card--work-history-content">
-          <p>
-            Desenvolvimento de soluções de integração para sistemas legados em Delphi,
-            modernizando a infraestrutura e implementando novas funcionalidades.
-          </p>
-          <ul>
-            <li><i class="fas fa-check"></i> Desenvolvimento de APIs REST para integração de sistemas</li>
-            <li><i class="fas fa-check"></i> Criação de chatbots para Whatsapp e Telegram</li>
-            <li><i class="fas fa-check"></i> Desenvolvimento de aplicações desktop com integração cloud</li>
-            <li><i class="fas fa-check"></i> Manutenção e evolução de sistemas legados</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <div class="card--work-history">
-        <div class="card--work-history-header" onclick="toggleExperience(this)">
-          <div>
-            <strong><i class="fas fa-layer-group company-icon-other"></i>OUTRAS ATUAÇÕES PROFISSIONAIS</strong>
-            <p class="period"><i class="far fa-calendar-alt"></i> Agosto 2020 - Maio 2022</p>
-          </div>
-          <span class="toggle-icon">▼</span>
-        </div>
-        <div class="card--work-history-content">
-          <p style="margin-bottom: 1.5em;">
-            <strong><i class="fas fa-code"></i> GRUPO FCAMARA</strong> • Engenheiro de Software Backend<br>
-            <span style="font-size: 0.9em; opacity: 0.8;">Fev 2022 - Mai 2022 • 4 meses</span><br>
-            Desenvolvimento de plataforma de gestão de ideias com Node.js/TypeScript, implementação de testes e
-            documentação de APIs.
-          </p>
-
-          <p style="margin-bottom: 1.5em;">
-            <strong><i class="fas fa-code"></i> AWS-CODE/AYT1.DEV</strong> • Engenheiro de Software Backend<br>
-            <span style="font-size: 0.9em; opacity: 0.8;">Jul 2021 - Fev 2022 • 8 meses</span><br>
-            Desenvolvimento de microsserviços escaláveis com Node.js, integração com serviços AWS e implementação de
-            APIs RESTful.
-          </p>
-
-          <p style="margin-bottom: 1.5em;">
-            <strong><i class="fas fa-code"></i> INTELITRADER</strong> • Desenvolvedor ASP.NET<br>
-            <span style="font-size: 0.9em; opacity: 0.8;">Jan 2021 - Mar 2021 • 3 meses</span><br>
-            Desenvolvimento de software para análise de risco financeiro utilizando C# e ASP.NET, integração com APIs
-            financeiras.
-          </p>
-
-          <p style="margin-bottom: 1.5em;">
-            <strong><i class="fas fa-code"></i> MYINTERCAMBIO</strong> • Desenvolvedor Backend Node.js/TypeScript<br>
-            <span style="font-size: 0.9em; opacity: 0.8;">Ago 2020 - Jan 2021 • 6 meses</span><br>
-            Desenvolvimento de chatbot para WhatsApp com Node.js, automação de processos de atendimento ao cliente.
-          </p>
-
-          <p><strong>Principais Tecnologias:</strong> Node.js, TypeScript, C#, ASP.NET, AWS, PostgreSQL, MongoDB, REST
-            APIs, Docker, Git</p>
-        </div>
-      </div>
-
-    <script>
-      function toggleExperience(header) {
-        const card = header.closest('.card--work-history');
-        card.classList.toggle('active');
-      }
-    </script>
-
-    <section class="section--page">
-      <h2>Projetos</h2>
-
-      <div class="carousel-container">
-        <button class="carousel-btn" onclick="moveCarousel(-1)">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-
-        <div class="carousel-wrapper">
-          <div class="carousel-track" id="projectsCarousel">
-            
-            <div class="carousel-slide">
-              <div class="card--project-enhanced project-myhouse">
-                <a href="./projects/myhouse.html">
-                  <div class="project-icon">
-                    <i class="fas fa-home"></i>
-                  </div>
-                  <div class="project-content">
-                    <h3>My House</h3>
-                    <p>Sistema de gerenciamento residencial com Arquitetura Hexagonal</p>
-                    <div class="project-tags">
-                      <span class="tag">Spring Boot</span>
-                      <span class="tag">Hexagonal</span>
-                      <span class="tag">Java</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="card--project-enhanced project-chatbot">
-                <a href="./projects/chatbot.html">
-                  <div class="project-icon">
-                    <i class="fas fa-robot"></i>
-                  </div>
-                  <div class="project-content">
-                    <h3>WhatsApp Bot</h3>
-                    <p>Bot validador de CEP integrado ao WhatsApp para consultas rápidas</p>
-                    <div class="project-tags">
-                      <span class="tag">Node.js</span>
-                      <span class="tag">WhatsApp API</span>
-                      <span class="tag">TypeScript</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="carousel-slide">
-              <div class="card--project-enhanced project-nest">
-                <a href="./projects/nest.html">
-                  <div class="project-icon">
-                    <i class="fas fa-clock"></i>
-                  </div>
-                  <div class="project-content">
-                    <h3>Food Facts</h3>
-                    <p>CRON Job API para coleta e processamento de dados nutricionais</p>
-                    <div class="project-tags">
-                      <span class="tag">NestJS</span>
-                      <span class="tag">CRON</span>
-                      <span class="tag">MongoDB</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="card--project-enhanced project-mylivros">
-                <a href="./projects/mylivros.html">
-                  <div class="project-icon">
-                    <i class="fas fa-book"></i>
-                  </div>
-                  <div class="project-content">
-                    <h3>MyLivros App</h3>
-                    <p>Aplicação para gestão de biblioteca pessoal e controle de leituras</p>
-                    <div class="project-tags">
-                      <span class="tag">React</span>
-                      <span class="tag">Node.js</span>
-                      <span class="tag">PostgreSQL</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="carousel-slide">
-              <div class="card--project-enhanced project-todo">
-                <a href="./projects/todo.html">
-                  <div class="project-icon">
-                    <i class="fas fa-tasks"></i>
-                  </div>
-                  <div class="project-content">
-                    <h3>Vanilla Todo App</h3>
-                    <p>Aplicação de tarefas construída com JavaScript puro e LocalStorage</p>
-                    <div class="project-tags">
-                      <span class="tag">JavaScript</span>
-                      <span class="tag">HTML5</span>
-                      <span class="tag">CSS3</span>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <button class="carousel-btn" onclick="moveCarousel(1)">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-      </div>
-
-      <div class="carousel-indicators" id="projectsIndicators"></div>
-
-    </section>
-
-  </div>
-
-
-  <button id="btnTopo" onclick="rolarParaTopo()" class="go--to-top-bnt">&#8593; Top</button>
-
   <script>
-    function toggleTheme() {
+    const themeButton = document.getElementById('btn--theme-toggle');
+    const topButton = document.getElementById('btnTopo');
+
+    function updateThemeButton(isLight) {
+      const icon = themeButton.querySelector('i');
+      icon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+      themeButton.setAttribute('aria-label', isLight ? 'Ativar tema escuro' : 'Ativar tema claro');
+    }
+
+    themeButton.addEventListener('click', () => {
       const isLight = document.documentElement.classList.toggle('light-mode');
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
-      updateThemeIcon(isLight);
-    }
-
-    function updateThemeIcon(isLight) {
-      const icon = document.querySelector('#btn--theme-toggle i');
-      icon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
-    }
-
-    updateThemeIcon(document.documentElement.classList.contains('light-mode'));
-
-    window.onscroll = function () { scrollFunction() };
-
-    function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("btnTopo").style.display = "block";
-      } else {
-        document.getElementById("btnTopo").style.display = "none";
-      }
-    }
-
-    function rolarParaTopo() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    let currentSlide = 0;
-    let totalSlides = 0;
-    let isSmallScreen = null;
-    const carousel = document.getElementById('projectsCarousel');
-    const indicatorsContainer = document.getElementById('projectsIndicators');
-    
-    const originalSlides = Array.from(carousel.querySelectorAll('.carousel-slide'));
-    
-    function initCarousel() {
-      const wasSmallScreen = isSmallScreen;
-      isSmallScreen = window.innerWidth <= 600;
-      
-      if (wasSmallScreen !== isSmallScreen) {
-        currentSlide = 0;
-        buildCarousel();
-      }
-    }
-    
-    function buildCarousel() {
-      carousel.innerHTML = '';
-      indicatorsContainer.innerHTML = '';
-      
-      if (isSmallScreen) {
-        originalSlides.forEach(originalSlide => {
-          const cards = Array.from(originalSlide.querySelectorAll('.card--project-enhanced'));
-          cards.forEach(card => {
-            const slide = document.createElement('div');
-            slide.classList.add('carousel-slide');
-            slide.appendChild(card.cloneNode(true));
-            carousel.appendChild(slide);
-          });
-        });
-      } else {
-        originalSlides.forEach(originalSlide => {
-          carousel.appendChild(originalSlide.cloneNode(true));
-        });
-      }
-      
-      const slides = carousel.querySelectorAll('.carousel-slide');
-      totalSlides = slides.length;
-      
-      for (let i = 0; i < totalSlides; i++) {
-        const indicator = document.createElement('div');
-        indicator.classList.add('indicator');
-        if (i === 0) indicator.classList.add('active');
-        indicator.addEventListener('click', () => goToSlide(i));
-        indicatorsContainer.appendChild(indicator);
-      }
-      
-      updateCarousel();
-    }
-
-    function moveCarousel(direction) {
-      currentSlide += direction;
-      
-      if (currentSlide < 0) {
-        currentSlide = totalSlides - 1;
-      } else if (currentSlide >= totalSlides) {
-        currentSlide = 0;
-      }
-      
-      updateCarousel();
-    }
-
-    function goToSlide(index) {
-      currentSlide = index;
-      updateCarousel();
-    }
-
-    function updateCarousel() {
-      const offset = -currentSlide * 100;
-      carousel.style.transform = `translateX(${offset}%)`;
-      
-      const indicators = indicatorsContainer.querySelectorAll('.indicator');
-      indicators.forEach((indicator, index) => {
-        indicator.classList.toggle('active', index === currentSlide);
-      });
-    }
-    
-    initCarousel();
-    
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        initCarousel();
-      }, 250);
+      updateThemeButton(isLight);
     });
-  </script>
 
+    updateThemeButton(document.documentElement.classList.contains('light-mode'));
+
+    window.addEventListener('scroll', () => {
+      topButton.classList.toggle('is-visible', window.scrollY > 600);
+    }, { passive: true });
+
+    topButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
 </body>
 
 </html>
