@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Júlio Miguel — SNES Hello World</title>
+  <meta name="description" content="Meu primeiro Hello World rodando num Super Nintendo real: ROM em assembly 65816.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/icon.png" type="image/png">
+  <script>
+    (function () {
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.classList.add('light-mode');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <button id="btn--theme-toggle" onclick="toggleTheme()" title="Alternar tema">
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  </button>
+
+  <div id="container--main">
+
+    <a class="back-link" href="../index.html">&#x2190; voltar</a>
+
+    <h1>SNES Hello World — sonho de infância realizado</h1>
+
+    <ul>
+      <li><a href="https://www.youtube.com/shorts/uEZEAz7POkY" target="_blank">Demonstração (vídeo)</a></li>
+      <li><a href="https://github.com/ojuliomiguel/snes_pangolin" target="_blank">Código Fonte</a></li>
+    </ul>
+
+    <img id="project--img" src="../assets/snes_pangolin.jpeg" alt="Meu primeiro Hello World rodando num Super Nintendo real, com o texto JULIO MIGUEL e uma xícara em sprite na tela">
+
+    <p>
+      Meu primeiro "Hello World" rodando em um Super Nintendo real. Montei uma ROM pequena em
+      assembly 65816, compilei localmente, copiei para um EverDrive e consegui ver o resultado
+      no console.
+    </p>
+
+    <p>
+      É um projeto simples: texto na tela, uma xícara em sprite, vapor animado e um fade-in.
+      Mas para mim o valor está no caminho completo: sair do código, passar pelo build da ROM,
+      acertar header, vetores, layout LoROM, inicialização da PPU, tiles, paletas e finalmente
+      ver tudo funcionando fora do emulador.
+    </p>
+
+    <p>
+      Não tem sistema operacional, não tem <code>main</code>, não tem API gráfica. O console liga,
+      lê o vetor de reset e começa a executar bytes. Pequeno milestone, mas daqueles que dão
+      vontade de continuar explorando.
+    </p>
+
+    <h3>Características</h3>
+
+    <ul>
+      <li>Assembly 65816 puro, sem engine ou biblioteca gráfica</li>
+      <li>Build completo da ROM: header, vetores e layout LoROM</li>
+      <li>Inicialização da PPU, tiles, paletas e sprites</li>
+      <li>Texto, xícara em sprite, vapor animado e fade-in</li>
+      <li>Testado em hardware real via EverDrive</li>
+    </ul>
+
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const isLight = document.documentElement.classList.toggle('light-mode');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    }
+  </script>
+</body>
+
+</html>
