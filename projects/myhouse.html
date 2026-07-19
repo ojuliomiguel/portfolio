@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Júlio Miguel </title>
-  <meta name="description" content="">
+  <title>Júlio Miguel - My House (Arquitetura Hexagonal)</title>
+  <meta name="description" content="Scoring API para priorização de famílias em habitação social, em Java 17 e Spring Boot, com Arquitetura Hexagonal (Ports & Adapters) e regras de scoring plugáveis via Strategy.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../styles/main.css">
   <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
@@ -29,7 +29,7 @@
 
     <a class="back-link" href="../index.html">&#x2190; voltar</a>
 
-    <h1>My House - Um experimento hexagonal com Spring Boot</h1>
+    <h1>My House - Scoring API para priorização de famílias em habitação social com Arquitetura Hexagonal (Ports &amp; Adapters)</h1>
 
     <ul>
       <li><a href="https://github.com/ojuliomiguel/my-house" target="_blank">Código Fonte</a></li>
@@ -39,41 +39,90 @@
       <em>"What goes inside the hexagon? I don't care."</em> - Cockburn
     </p>
 
-    <img id="project--img" src="https://raw.githubusercontent.com/ojuliomiguel/my-house/refs/heads/main/ports_and_adapters_flow.jpeg" alt="Hexagonal Architecture Diagram">
+    <img id="project--img" src="https://raw.githubusercontent.com/ojuliomiguel/my-house/refs/heads/main/ports_and_adapters_flow.jpeg" alt="Diagrama de fluxo da arquitetura Ports and Adapters">
 
     <p>
-      O projeto "myhouse" foi desenvolvido com arquitetura hexagonal (também conhecida como Ports And Adapters) para
-      gerenciar a complexidade do software e manter uma separação clara entre as regras de negócios.
-      manutenção.
+      <strong>My House</strong> é uma Scoring API para priorização de famílias em um programa de habitação social: a API
+      recebe um conjunto de famílias (renda total e dependentes), calcula uma pontuação para cada uma segundo regras de negócio
+      e retorna as famílias elegíveis ordenadas por score. O foco do projeto não é o CRUD em si, mas usar um domínio
+      pequeno e com regras reais para exercitar a <strong>Arquitetura Hexagonal (Ports &amp; Adapters)</strong> de
+      ponta a ponta, mantendo o núcleo de negócio 100% independente do Spring.
     </p>
 
-    <h3>Principais Características</h3>
+    <p>
+      A ideia central da Arquitetura Hexagonal é a <strong>regra de dependência</strong>: tudo aponta para dentro. O
+      domínio não sabe que existe Spring, HTTP ou banco: quem conhece o domínio são as bordas. A comunicação com o
+      mundo externo acontece por <strong>portas</strong> (interfaces definidas pelo domínio) que os <strong>adapters</strong>
+      da infraestrutura implementam. Um <code>POST /families</code> entra por um adapter HTTP, atravessa um caso de uso e
+      chega ao núcleo; a persistência é acessada de volta por uma porta, nunca por uma dependência direta. Na prática:
+      trocar in-memory por Postgres, ou REST por mensageria, é mexer só na borda, e o núcleo fica intacto.
+    </p>
+
+    <h3>Design &amp; Decisões de Arquitetura</h3>
 
     <ul>
-      <li>Arquitetura Hexagonal (Ports and Adapters)</li>
-      <li>Separação clara entre domínio e infraestrutura</li>
-      <li>API REST para gerenciamento de famílias</li>
-      <li>Sistema de elegibilidade baseado em renda e dependentes</li>
-      <li>Containerização com Docker</li>
-      <li>Testes automatizados</li>
+      <li>
+        <strong>Domínio isolado de framework:</strong> as entidades (<code>Family</code>, <code>Dependent</code>) e as
+        regras de scoring são Java puro, sem anotações do Spring, sem dependência de infraestrutura. O framework fica
+        na borda.
+      </li>
+      <li>
+        <strong>Ports &amp; Adapters:</strong> as portas são interfaces de gateway (<code>RegisterFamiliesGateway</code>,
+        <code>ListFamiliesGateway</code>) definidas no domínio; a persistência entra por adapters (hoje in-memory),
+        substituíveis por um banco real sem tocar no núcleo.
+      </li>
+      <li>
+        <strong>Strategy para as regras de elegibilidade:</strong> a pontuação é abstraída pela interface
+        <code>Scoring</code>, com a implementação <code>MyPopularHouseScoring</code>. Trocar o critério do programa é
+        plugar outra estratégia, sem alterar casos de uso nem entidades.
+      </li>
+      <li>
+        <strong>Casos de uso explícitos:</strong> cada operação é um <em>use case</em> com Input/Output próprios sob um
+        contrato comum (<code>UseCaseContract&lt;I, O&gt;</code>): <code>RegisterFamilies</code> e
+        <code>ListEligibleFamilies</code>.
+      </li>
+      <li>
+        <strong>IoC manual:</strong> a composição das dependências é feita em <em>providers</em> próprios, deixando
+        claro quem monta o quê e reforçando que o domínio não conhece o container.
+      </li>
+      <li>
+        <strong>Builder para consulta:</strong> paginação e ordenação passam por um <code>Filter</code> montado via
+        Builder (<code>sortBy</code>, <code>pageNumber</code>, <code>pageSize</code>).
+      </li>
+      <li>
+        <strong>Fábricas na entidade:</strong> <code>Family.create()</code> (nova, calcula o score na construção) e
+        <code>Family.restore()</code> (reidratação), evitando estados inválidos.
+      </li>
     </ul>
 
-    <h3>Tecnologias Utilizadas</h3>
+    <p>
+      As regras em si (faixas de renda, bônus por dependentes) são só o <em>miolo do hexágono</em>, propositalmente
+      simples e trocáveis via <code>Strategy</code>. O que importa aqui é que elas vivem no domínio, sem nenhum
+      acoplamento com Spring, HTTP ou persistência.
+    </p>
+
+    <h3>API REST</h3>
+
+    <ul>
+      <li><code>POST /families</code>: registra um lote de famílias com renda e dependentes.</li>
+      <li><code>GET /families/eligibles</code>: lista as famílias elegíveis ordenadas por pontuação (com paginação).</li>
+    </ul>
+
+    <h3>Qualidade &amp; Testes</h3>
+
+    <ul>
+      <li>Testes unitários no núcleo (entidade <code>Family</code> e a estratégia de scoring), sem subir o Spring.</li>
+      <li>Domínio testável em isolamento, consequência direta de separar regras de negócio da infraestrutura.</li>
+    </ul>
+
+    <h3>Stack</h3>
 
     <ul>
       <li>Java 17</li>
-      <li>Spring Boot</li>
+      <li>Spring Boot (apenas na borda: controllers HTTP e bootstrap)</li>
       <li>Maven</li>
       <li>Docker</li>
     </ul>
-
-    <h3>Arquitetura</h3>
-
-    <p>
-      O projeto segue os princípios da arquitetura hexagonal, onde o núcleo da aplicação (domínio) é independente de
-      frameworks e tecnologias específicas. As regras de negócio ficam isoladas no centro, enquanto os adaptadores (como
-      APIs REST, bancos de dados, etc.) ficam na camada externa, permitindo maior flexibilidade e testabilidade.
-    </p>
 
   </div>
 
