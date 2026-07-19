@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Júlio Miguel - PangoFlow (ClojureScript)</title>
+  <meta name="description" content="Extensão de navegador em ClojureScript para transformar progresso em blocos visíveis, com domínio isolado, testes por módulo e armazenamento local-first.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/icon.png" type="image/png">
+  <script>
+    (function () {
+      if (localStorage.getItem('theme') === 'light') {
+        document.documentElement.classList.add('light-mode');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <button id="btn--theme-toggle" onclick="toggleTheme()" title="Alternar tema">
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  </button>
+
+  <div id="container--main">
+
+    <a class="back-link" href="../index.html">&#x2190; voltar</a>
+
+    <h1>PangoFlow: uma extensão de navegador para transformar progresso em blocos visíveis</h1>
+
+    <p class="mono" style="color: var(--accentWarmColor); font-size: 0.85rem;">em desenvolvimento ativo</p>
+
+    <ul>
+      <li><a href="https://github.com/ojuliomiguel/PangoFlow" target="_blank">Código Fonte</a></li>
+    </ul>
+
+    <img id="project--img" src="../assets/pangoflow.svg" alt="Mockup do PangoFlow: popup da extensão para captura rápida e dashboard com heatmap de contribuição">
+
+    <p>
+      O <strong>PangoFlow</strong> é uma extensão de navegador (Manifest V3) escrita em
+      <strong>ClojureScript</strong> para acompanhar hábitos de autodesenvolvimento. A ideia é fugir da lógica frágil de
+      "streaks": cada esforço vira um <em>Block</em>, e os blocos acumulados formam um heatmap de contribuição que torna
+      o progresso visível ao longo do tempo. O popup serve para captura rápida no momento; o dashboard é para revisar e
+      configurar.
+    </p>
+
+    <h3>Por que este projeto é interessante</h3>
+
+    <p>
+      Mais do que uma extensão, o PangoFlow é um exercício deliberado de <strong>design de domínio</strong>. Antes do
+      código, defini uma linguagem ubíqua e um PRD de MVP, e a arquitetura foi montada para manter as regras de negócio
+      isoladas da UI e do navegador, testáveis em ClojureScript puro.
+    </p>
+
+    <h3>Design &amp; Decisões</h3>
+
+    <ul>
+      <li>
+        <strong>Linguagem ubíqua documentada:</strong> um glossário de domínio fixa os termos do produto (Activity,
+        Entry, Block, Flow, Focus Session, Target) e lista os termos a evitar, mantendo código, UI e docs falando a
+        mesma língua.
+      </li>
+      <li>
+        <strong>Domínio separado da UI:</strong> os módulos de <code>activity</code>, <code>entry</code>,
+        <code>block-rule</code> e <code>category</code> não sabem que existe React, popup ou navegador. A UI apenas
+        consome esses módulos.
+      </li>
+      <li>
+        <strong>Block Rule como módulo profundo:</strong> uma API pequena (<code>entry-&gt;blocks</code>) esconde a
+        conversão de esforço em blocos para os três modos de medição (completion, count, duration), com blocos
+        fracionários internos e blocos inteiros na interface.
+      </li>
+      <li>
+        <strong>Local-first:</strong> o histórico local é a fonte da verdade (sem conta, sem nuvem), com export/import
+        validado e versionamento pronto para migração.
+      </li>
+      <li>
+        <strong>Templates de atividade:</strong> presets (leitura, meditação, exercício, código, escrita) já trazem
+        modo de medição, regra de blocos, cor de destaque e categoria sugeridos.
+      </li>
+      <li>
+        <strong>Consciência da plataforma:</strong> o build lida com a restrição de CSP do Manifest V3 (sem
+        <code>unsafe-eval</code>), usando release bundles do shadow-cljs em vez dos bundles de dev.
+      </li>
+    </ul>
+
+    <h3>Disciplina de Testes</h3>
+
+    <p>
+      Cada módulo de domínio tem seu arquivo de teste correspondente. Os testes verificam comportamento pelas interfaces
+      estáveis (dadas atividades, entries e regras, o sistema devolve os blocos, totais diários e células de heatmap
+      esperados), sem depender de helpers privados ou de detalhes de implementação da UI.
+    </p>
+
+    <h3>Stack</h3>
+
+    <ul>
+      <li>ClojureScript</li>
+      <li>shadow-cljs</li>
+      <li>Extensão de navegador (Manifest V3, Chromium)</li>
+      <li>Armazenamento local da extensão (local-first)</li>
+    </ul>
+
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const isLight = document.documentElement.classList.toggle('light-mode');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    }
+  </script>
+</body>
+
+</html>
